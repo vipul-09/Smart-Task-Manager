@@ -1,12 +1,18 @@
-public class Task {
+import java.io.Serializable;
+
+public class Task implements Serializable {
     private int id;
     private String title;
     private boolean isCompleted;
 
-    public Task(int id, String title) {
+    public Task(int id, String title, boolean isCompleted) {
         this.id = id;
         this.title = title;
-        this.isCompleted = false;
+        this.isCompleted = isCompleted;
+    }
+
+    public Task(int id, String title) {
+        this(id, title, false);
     }
 
     public int getId() {
@@ -29,4 +35,20 @@ public class Task {
     public String toString() {
         return id + ". " + title + " [" + (isCompleted ? "Completed" : "Pending") + "]";
     }
+
+    // Convert task to file format
+    public String toFileString() {
+        return id + "," + title + "," + isCompleted;
+    }
+
+    // Convert file line to task
+    public static Task fromFileString(String line) {
+        String[] parts = line.split(",");
+        return new Task(
+            Integer.parseInt(parts[0]),
+            parts[1],
+            Boolean.parseBoolean(parts[2])
+        );
+    }
+}
 }
