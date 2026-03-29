@@ -17,7 +17,7 @@ This project demonstrates the use of core Java concepts such as Object-Oriented 
 * ✔️ Mark tasks as completed
 * ❌ Delete tasks
 * 🧭 Menu-driven interface
-
+- 💾 Saves tasks to file (persistent storage)
 ---
 
 ## 🛠️ Tech Stack
