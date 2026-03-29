@@ -1,3 +1,5 @@
+This project was developed as part of a BYOP assignment.
+
 # 🧠 Smart Task Manager (Java CLI Project)
 
 ## 📌 Overview
